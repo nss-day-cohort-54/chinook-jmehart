@@ -1,0 +1,17 @@
+-- Provide a query that shows all the Tracks, but displays no IDs. The resultant table should include:
+-- Album name
+-- Media type
+-- Genre
+
+SELECT
+    t.name AS TrackName,
+    a.title AS AlbumTitle,
+    mt.name,
+    g.name AS Genre
+FROM Track t
+JOIN Album a
+    ON a.albumid = t.albumid
+JOIN MediaType mt
+    ON mt.mediatypeid = t.mediatypeid
+JOIN Genre g
+    ON g.genreid = t.genreid
